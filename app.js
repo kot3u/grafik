@@ -1,3 +1,4 @@
+const biggerButton = document.getElementById('bigger-button-1');
 const bigButton = document.getElementById('big-button-1');
 const midButton = document.getElementById('medium-button-1');
 const smallButton = document.getElementById('small-button-1');
@@ -30,7 +31,10 @@ let convertTime = (input) =>{
 };
 
 
-bigButton.addEventListener('click', function() {add_hour(10)}
+biggerButton.addEventListener('click', function() {add_hour(10)}
+);
+
+bigButton.addEventListener('click', function () {add_hour(8.50)}
 );
 
 midButton.addEventListener('click', function () {add_hour(7.50)}
