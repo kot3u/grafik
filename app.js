@@ -8,7 +8,7 @@ let hour = 0;
 
 let add_hour =  (value) => {
   hour += value;
-  outputText.textContent = `${hour} - godzin`
+  outputText.textContent = `${hour} - godzin`;
 };
 
 let getCustomInput = () =>{
@@ -18,9 +18,16 @@ let getCustomInput = () =>{
 
 let convertTime = (input) =>{
   let arr = input.split(':');
-  hour += (parseInt(arr[0]) + parseInt(arr[1])/60)
-  outputText.textContent = `${hour} - godzin`
-}
+  let temp = (parseInt(arr[0]) + parseInt(arr[1]) / 60)
+  if (typeof temp !== 'number' || isNaN(temp)) {
+    temp = 0;
+    outputText.textContent = 'nie wprowadzono godziny'
+  }
+  else {
+    hour += temp
+    outputText.textContent = `${hour} - godzin`
+  };
+};
 
 
 bigButton.addEventListener('click', function() {add_hour(10)}
@@ -32,5 +39,5 @@ midButton.addEventListener('click', function () {add_hour(7.50)}
 smallButton.addEventListener('click', function () {add_hour(6)}
 );
 
-submitBtn.addEventListener('click', function() {getCustomInput()})
+submitBtn.addEventListener('click', function() {getCustomInput()});
 
