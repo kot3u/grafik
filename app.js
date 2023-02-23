@@ -9,7 +9,7 @@ let hour = 0;
 
 let add_hour =  (value) => {
   hour += value;
-  outputText.textContent = `${hour} - godzin`;
+  outputText.textContent = `${hour} godzin`;
 };
 
 let getCustomInput = () =>{
@@ -22,11 +22,11 @@ let convertTime = (input) =>{
   let temp = (parseInt(arr[0]) + parseInt(arr[1]) / 60)
   if (typeof temp !== 'number' || isNaN(temp)) {
     temp = 0;
-    outputText.textContent = 'nie wprowadzono godziny'
+    outputText.textContent = `nie wprowadzono godziny, aktualna wartość - to ${hour} godzin`
   }
   else {
     hour += temp
-    outputText.textContent = `${hour} - godzin`
+    outputText.textContent = `${hour} godzin`
   };
 };
 
